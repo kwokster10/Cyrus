@@ -66,7 +66,7 @@ def read_file(master_list, fileName, sepRegex, reorder)
 		# puts newO
 		master_list << newO
 	end
-	return master_list
+	master_list
 end
 
 # reading in each file
@@ -75,38 +75,33 @@ read_file(master_list, "comma.txt", ",\s", [2, 4, 3])
 read_file(master_list, "space.txt", "\s", [3, 4, 5])
 
 # function to print output nice and neat
-def outputting(sorted_list)
+def outputting(num, sorted_list)
+	print "Output #{num}:\n"
 	sorted_list.each{|hash| print hash.values.join(" "), "\n"}
+	print "\n"
 end
 
 # Output 1 – sorted by gender (females before males) then by last name ascending
 def sort_gender(master_list)
-  # sorted_by_gender = master_list.sort_by{|hash| hash[:Gender]}
   sorted_by_gender = master_list.sort_by{|hash| [hash[:Gender], hash[:LastName]]} 
-  return sorted_by_gender
+  sorted_by_gender
 end
 
-print "Output 1:\n"
-outputting(sort_gender(master_list))
-print "\n"
+outputting(1, sort_gender(master_list))
 
 # Output 2 – sorted by birth date, ascending then by last name ascending.
 def sort_dob(master_list)
   sorted_by_birthdate = master_list.sort_by{|hash| [hash[:DOB][-4..-1], hash[:LastName]]}
-  return sorted_by_birthdate
+  sorted_by_birthdate
 end
 
-print "Output 2:\n"
-outputting(sort_dob(master_list))
-print "\n"
+outputting(2, sort_dob(master_list))
 
 # Output 3 – sorted by last name, descending.
 def sort_last_name(master_list)
 	sorted_by_surname = master_list.sort_by{|hash| hash[:LastName]}.reverse
-	return sorted_by_surname
+	sorted_by_surname
 end
 
-print "Output 3:\n"
-outputting(sort_last_name(master_list))
-print "\n"
+outputting(3, sort_last_name(master_list))
 

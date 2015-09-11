@@ -1,3 +1,4 @@
+# requiring necessary libraries and file
 require 'minitest/autorun'
 require 'minitest/pride'
 require './code_test.rb'
@@ -218,7 +219,7 @@ class TestCodeTest < MiniTest::Unit::TestCase
 				"FavoriteColor": "Blue"}
     	 ]
 
-    	 outputting(3, sorted_master_list)]
+    outputting(3, sorted_master_list)
 
   	assert_equal "Output 3:\nSmith Steve Male 3/3/1985 Red\nBouillon Francis Male 6/3/1975 Blue\n\n", $stdout.string
   end

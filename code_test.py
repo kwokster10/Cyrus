@@ -42,4 +42,16 @@ def sort_dob(to_sort_list):
 def sort_surname(to_sort_list):
 	return sorted(to_sort_list, key=lambda x: x["LastName"], reverse=True)
 
+# function to print the output nicely
+def pretty_output(num, sorted_list):
+	print "Output %d:" % num
+	for obj in sorted_list: 
+		print obj["LastName"], obj["FirstName"], obj["Gender"], obj["DOB"], obj["FavoriteColor"]
+	print
+
+# outputting answers nicely
+pretty_output(1, sort_gender(master_list))
+pretty_output(2, sort_dob(master_list))
+pretty_output(3, sort_surname(master_list))
+
 

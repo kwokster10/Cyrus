@@ -8,7 +8,7 @@
 	2. Execute 'ruby code_test.rb' to see the output of reading files inside *input_files*.
 
 
-## Python in Progress.... 
+## Below is still progress.... 
 
 ### Directions For Use in Python:
 

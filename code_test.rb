@@ -37,24 +37,21 @@ end
 
 # Output 1 – sorted by gender (females before males) then by last name ascending
 def sort_gender(master_list)
-  sorted_by_gender = master_list.sort_by{|hash| [hash[:Gender], hash[:LastName]]} 
-  sorted_by_gender
+  master_list.sort_by{|hash| [hash[:Gender], hash[:LastName]]}
 end
 
 outputting(1, sort_gender(master_list))
 
 # Output 2 – sorted by birth date, ascending then by last name ascending.
 def sort_dob(master_list)
-  sorted_by_birthdate = master_list.sort_by{|hash| [hash[:DOB][-4..-1], hash[:LastName]]}
-  sorted_by_birthdate
+  master_list.sort_by{|hash| [hash[:DOB][-4..-1], hash[:LastName]]}
 end
 
 outputting(2, sort_dob(master_list))
 
 # Output 3 – sorted by last name, descending.
 def sort_last_name(master_list)
-	sorted_by_surname = master_list.sort_by{|hash| hash[:LastName]}.reverse
-	sorted_by_surname
+	master_list.sort_by{|hash| hash[:LastName]}.reverse
 end
 
 outputting(3, sort_last_name(master_list))

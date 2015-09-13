@@ -25,11 +25,21 @@ def collect_data(fileName, sepRegex, reorder):
 	# return master_list
 	return master_list
 
-print collect_data("comma.txt", ", ", [2, 4, 3])
-print collect_data("pipe.txt", " | ", [3, 5, 4])
-print collect_data("space.txt", " ", [3, 4, 5])
+# reading in all three files
+collect_data("comma.txt", ", ", [2, 4, 3])
+collect_data("pipe.txt", " | ", [3, 5, 4])
+collect_data("space.txt", " ", [3, 4, 5])
 
+# Output 1: sorted by gender (females before males) then by last name ascending
+def sort_gender(to_sort_list): 
+	return sorted(to_sort_list, key=lambda x: (x["Gender"], x["LastName"]))
 
+# Output 2: sorted by birth date, ascending then by last name ascending.
+def sort_dob(to_sort_list):
+	return sorted(to_sort_list, key=lambda x: (x["DOB"][-4:], x["LastName"]))
 
+# Output 3: sorted by last name, descending.
+def sort_surname(to_sort_list):
+	return sorted(to_sort_list, key=lambda x: x["LastName"], reverse=True)
 
 

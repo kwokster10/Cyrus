@@ -25,7 +25,7 @@ def collect_data(fileName, sepRegex, reorder):
 	# return master_list
 	return master_list
 
-# reading in all three files
+# # reading in all three files
 collect_data("comma.txt", ", ", [2, 4, 3])
 collect_data("pipe.txt", " | ", [3, 5, 4])
 collect_data("space.txt", " ", [3, 4, 5])
